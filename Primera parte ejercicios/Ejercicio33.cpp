@@ -2,17 +2,17 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+using namespace std;
 
-
-void imprimirVector(const std::vector<int>& arr) {
-    std::cout << "{ ";
+void imprimirVector(const vector<int>& arr) {
+    cout << "{ ";
     for (size_t i = 0; i < arr.size(); ++i) {
-        std::cout << arr[i] << (i == arr.size() - 1 ? "" : ", ");
+        cout << arr[i] << (i == arr.size() - 1 ? "" : ", ");
     }
-    std::cout << " }" << std::endl;
+    cout << " }" << endl;
 }
 
-void ordenarPorSeleccionDescendente(std::vector<int>& arr) {
+void ordenarPorSeleccionDescendente(vector<int>& arr) {
     int n = arr.size(); // Obtener el tamaño del vector
 
     for (int i = 0; i < n - 1; ++i) {
@@ -25,22 +25,22 @@ void ordenarPorSeleccionDescendente(std::vector<int>& arr) {
 
 
         if (indiceDelMaximo != i) {
-            std::swap(arr[i], arr[indiceDelMaximo]);
+            swap(arr[i], arr[indiceDelMaximo]);
         }
     }
 }
 
 int main() {
     // lista de números //
-    std::vector<int> numeros = {64, 25, 12, 22, 11, 88, 7, 33};
+    vector<int> numeros = {64, 25, 12, 22, 11, 88, 7, 33};
 
-    std::cout << "Lista original: ";
+    cout << "Lista original: ";
     imprimirVector(numeros);
 
 
     ordenarPorSeleccionDescendente(numeros);
 
-    std::cout << "Lista ordenada descendente: ";
+    cout << "Lista ordenada descendente: ";
     imprimirVector(numeros);
 
 
