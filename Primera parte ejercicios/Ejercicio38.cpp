@@ -1,5 +1,6 @@
 //38. Concatenar dos cadenas: Unir dos cadenas de caracteres en una sola sin usar funciones de biblioteca.//
 #include <iostream>
+using namespace std;
 
 int obtenerLongitudCadena(const char* str) {
     int longitud = 0;
@@ -35,13 +36,13 @@ int main() {
     char cad2[] = " Mundo!";
     char resultado[100]; // Un tamaño seguro para este ejemplo
 
-    std::cout << "Cadena 1: " << cad1 << std::endl;
-    std::cout << "Cadena 2: " << cad2 << std::endl;
+    cout << "Cadena 1: " << cad1 << endl;
+    cout << "Cadena 2: " << cad2 << endl;
 
     // Llamar a la función para concatenar//
     concatenarCadenas(resultado, cad1, cad2);
 
-    std::cout << "Cadena concatenada: " << resultado << std::endl;
+    cout << "Cadena concatenada: " << resultado << endl;
 
 
     return 0;
