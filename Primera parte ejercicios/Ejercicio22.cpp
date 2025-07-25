@@ -1,5 +1,6 @@
 //22.	Frecuencia de un elemento: Contar cuántas veces aparece un valor en el arreglo. //
 #include <iostream>
+using namespace std;
 
 int contarFrecuencia(int arr[], int tamano, int valorBuscado) {
 
@@ -25,28 +26,28 @@ int main() {
     int frecuenciaEncontrada;
 
 
-    std::cout << "El arreglo es: { ";
+    cout << "El arreglo es: { ";
     for (int i = 0; i < tamanoArreglo; ++i) {
         std::cout << arreglo[i] << (i == tamanoArreglo - 1 ? "" : ", ");
     }
-    std::cout << " }" << std::endl;
+    cout << " }" << std::endl;
 
     // resultados //
     frecuenciaEncontrada = contarFrecuencia(arreglo, tamanoArreglo, valorACoincidir);
-    std::cout << "El valor " << valorACoincidir << " aparece "
-              << frecuenciaEncontrada << " veces en el arreglo." << std::endl;
+    cout << "El valor " << valorACoincidir << " aparece "
+              << frecuenciaEncontrada << " veces en el arreglo." << endl;
 
     frecuenciaEncontrada = contarFrecuencia(arreglo, tamanoArreglo, valorACoincidir2);
-    std::cout << "El valor " << valorACoincidir2 << " aparece "
-              << frecuenciaEncontrada << " veces en el arreglo." << std::endl;
+    cout << "El valor " << valorACoincidir2 << " aparece "
+              << frecuenciaEncontrada << " veces en el arreglo." << endl;
 
     frecuenciaEncontrada = contarFrecuencia(arreglo, tamanoArreglo, valorACoincidir3);
-    std::cout << "El valor " << valorACoincidir3 << " aparece "
-              << frecuenciaEncontrada << " veces en el arreglo." << std::endl;
+    cout << "El valor " << valorACoincidir3 << " aparece "
+              << frecuenciaEncontrada << " veces en el arreglo." << endl;
 
     frecuenciaEncontrada = contarFrecuencia(arreglo, tamanoArreglo, valorACoincidir4);
-    std::cout << "El valor " << valorACoincidir4 << " aparece "
-              << frecuenciaEncontrada << " veces en el arreglo." << std::endl;
+    cout << "El valor " << valorACoincidir4 << " aparece "
+              << frecuenciaEncontrada << " veces en el arreglo." << endl;
 
 return 0;
 }
