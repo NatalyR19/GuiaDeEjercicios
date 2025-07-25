@@ -2,44 +2,46 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+using namespace std;
+
 enum class TipoOrdenacion {
     ASCENDENTE,
     DESCENDENTE
 };
 
-void ordenarFilaEspecifica(std::vector<std::vector<int>>& matriz, int filaDeseada, TipoOrdenacion tipo) {
+void ordenarFilaEspecifica(vector<vector<int>>& matriz, int filaDeseada, TipoOrdenacion tipo) {
     if (matriz.empty()) {
-        std::cerr << "Error: La matriz esta vacia. No se puede ordenar." << std::endl;
+        cerr << "Error: La matriz esta vacia. No se puede ordenar." << endl;
         return;
     }
 
     if (filaDeseada < 0 || filaDeseada >= matriz.size()) {
-        std::cerr << "Error: La fila " << filaDeseada << " esta fuera de los limites de la matriz. No se puede ordenar." << std::endl;
+        cerr << "Error: La fila " << filaDeseada << " esta fuera de los limites de la matriz. No se puede ordenar." << endl;
         return;
     }
 
-    std::vector<int>& filaAOrdenar = matriz[filaDeseada];
+    vector<int>& filaAOrdenar = matriz[filaDeseada];
 
     if (tipo == TipoOrdenacion::ASCENDENTE) {
-        std::sort(filaAOrdenar.begin(), filaAOrdenar.end());
+        sort(filaAOrdenar.begin(), filaAOrdenar.end());
     } else {
-        std::sort(filaAOrdenar.begin(), filaAOrdenar.end(), std::greater<int>());
+        sort(filaAOrdenar.begin(), filaAOrdenar.end(), greater<int>());
     }
 
-    std::cout << "Fila " << filaDeseada << " ordenada "
-              << (tipo == TipoOrdenacion::ASCENDENTE ? "ASCENDENTE" : "DESCENDENTE") << "." << std::endl;
+    cout << "Fila " << filaDeseada << " ordenada "
+              << (tipo == TipoOrdenacion::ASCENDENTE ? "ASCENDENTE" : "DESCENDENTE") << "." << endl;
 }
 
-void imprimirMatriz(const std::vector<std::vector<int>>& matriz) {
+void imprimirMatriz(const vector<vector<int>>& matriz) {
     if (matriz.empty()) {
-        std::cout << "La matriz esta vacia." << std::endl;
+        cout << "La matriz esta vacia." << endl;
         return;
     }
     for (const auto& fila : matriz) {
         for (int elemento : fila) {
-            std::cout << elemento << "\t";
+            cout << elemento << "\t";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 }
 
@@ -51,39 +53,39 @@ int main() {
         {6, 3, 8, 2, 1}    // Fila 3
     };
 
-    std::cout << "Matriz original:" << std::endl;
+    cout << "Matriz original:" << endl;
     imprimirMatriz(miMatriz);
-    std::cout << std::endl;
+    cout << endl;
 
     int filaElegidaPorUsuario;
     int opcionOrdenacion;
     TipoOrdenacion tipoSeleccionado;
 
     // Pedir al usuario qué fila quiere ordenar//
-    std::cout << "Ingresa el indice de la fila que deseas ordenar (0 para la primera, 1 para la segunda, etc.): ";
-    std::cin >> filaElegidaPorUsuario;
+    cout << "Ingresa el indice de la fila que deseas ordenar (0 para la primera, 1 para la segunda, etc.): ";
+    cin >> filaElegidaPorUsuario;
 
     // Pedir al usuario el tipo de ordenación//
-    std::cout << "Elige el tipo de ordenacion:" << std::endl;
-    std::cout << "1. Ascendente" << std::endl;
-    std::cout << "2. Descendente" << std::endl;
-    std::cout << "Opcion: ";
-    std::cin >> opcionOrdenacion;
+    cout << "Elige el tipo de ordenacion:" << endl;
+    cout << "1. Ascendente" << endl;
+    cout << "2. Descendente" << endl;
+    cout << "Opcion: ";
+    cin >> opcionOrdenacion;
 
     if (opcionOrdenacion == 1) {
         tipoSeleccionado = TipoOrdenacion::ASCENDENTE;
     } else if (opcionOrdenacion == 2) {
         tipoSeleccionado = TipoOrdenacion::DESCENDENTE;
     } else {
-        std::cout << "Opcion de ordenacion invalida. Se usara ascendente por defecto." << std::endl;
+        cout << "Opcion de ordenacion invalida. Se usara ascendente por defecto." << endl;
         tipoSeleccionado = TipoOrdenacion::ASCENDENTE;
     }
 
     ordenarFilaEspecifica(miMatriz, filaElegidaPorUsuario, tipoSeleccionado);
 
-    std::cout << "\nMatriz despues de la ordenacion:" << std::endl;
+    cout << "\nMatriz despues de la ordenacion:" << endl;
     imprimirMatriz(miMatriz);
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }
