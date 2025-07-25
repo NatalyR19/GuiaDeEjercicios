@@ -1,6 +1,7 @@
 //41. Invertir cadena: Crear una versión invertida de una cadena (ej: "hola" → "aloh")//
 #include <iostream>
 #include <algorithm>
+using namespace std;
 
 int obtenerLongitudCadena(const char* str) {
     int longitud = 0;
@@ -22,7 +23,7 @@ void invertirCadena(char* cadena) {
     int derecha = longitud - 1;
 
     while (izquierda < derecha) {
-        std::swap(cadena[izquierda], cadena[derecha]);
+        swap(cadena[izquierda], cadena[derecha]);
 
         // Mueve los índices hacia el centro//
         izquierda++;
@@ -34,9 +35,9 @@ int main() {
     // Texto que será invertido//
     char texto[] = "aloh";
 
-    std::cout << "Original: " << texto << std::endl;
+    cout << "Original: " << texto << endl;
     invertirCadena(texto);
-    std::cout << "Invertida: " << texto << std::endl << std::endl;
+    cout << "Invertida: " << texto << endl << endl;
 
     return 0;
 }
