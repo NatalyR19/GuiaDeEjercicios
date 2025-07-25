@@ -1,11 +1,12 @@
 //18.	Mayor elemento en arreglo: Encontrar el valor máximo en un arreglo unidimensional.//
 #include <iostream>
 #include <limits>
+using namespace std;
 
 int encontrarMayorElemento(int arr[], int tamano) {
     if (tamano <= 0) {
-        std::cerr << "Error: El arreglo esta vacio o tiene un tamano invalido." << std::endl;
-        return std::numeric_limits<int>::min();
+        cerr << "Error: El arreglo esta vacio o tiene un tamano invalido." << endl;
+        return numeric_limits<int>::min();
     }
 
     int maximoEncontrado = arr[0];
@@ -28,13 +29,13 @@ int main() {
     elMayorNumero = encontrarMayorElemento(miArreglo, tamanoArreglo);
 
 
-    std::cout << "El arreglo es: { ";
+    cout << "El arreglo es: { ";
     for (int i = 0; i < tamanoArreglo; ++i) {
-        std::cout << miArreglo[i] << (i == tamanoArreglo - 1 ? "" : ", ");
+        cout << miArreglo[i] << (i == tamanoArreglo - 1 ? "" : ", ");
     }
-    std::cout << " }" << std::endl;
+    cout << " }" << endl;
 
-    std::cout << "El numero mayor en el arreglo es: " << elMayorNumero << std::endl;
+    cout << "El numero mayor en el arreglo es: " << elMayorNumero << endl;
 
     return 0;
 }
