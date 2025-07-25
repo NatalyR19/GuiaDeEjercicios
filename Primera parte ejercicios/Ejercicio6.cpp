@@ -1,5 +1,6 @@
 //6. Perímetro de un círculo: Función que reciba el radio y retorne el perímetro usando π = 3.1416. //
 #include <iostream>
+using namespace std;
 
 double calcularPerimetroCirculo(double radio) {
     const double PI = 3.1416;
@@ -13,12 +14,12 @@ int main() {
     double radioIngresado;
     double perimetroCalculado;
 
-    std::cout << "Ingrese el radio del circulo: ";
-    std::cin >> radioIngresado; // Leer el valor del radio
+    cout << "Ingrese el radio del circulo: ";
+    cin >> radioIngresado; // Leer el valor del radio
     perimetroCalculado = calcularPerimetroCirculo(radioIngresado);
 
-    std::cout << "El perimetro del circulo con radio " << radioIngresado
-              << " es: " << perimetroCalculado << std::endl;
+    cout << "El perimetro del circulo con radio " << radioIngresado
+              << " es: " << perimetroCalculado << endl;
 
     return 0;
 }
