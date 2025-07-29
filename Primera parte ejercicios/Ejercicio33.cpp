@@ -1,48 +1,27 @@
-//33. Ordenar descendente (Selección): Método de selección para ordenar de mayor a menor //
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
-void imprimirVector(const vector<int>& arr) {
-    cout << "{ ";
-    for (size_t i = 0; i < arr.size(); ++i) {
-        cout << arr[i] << (i == arr.size() - 1 ? "" : ", ");
-    }
-    cout << " }" << endl;
-}
+int main() {
+    const int tam = 6;
+    int arreglo[tam] = {45, 12, 67, 34, 89, 23};
 
-void ordenarPorSeleccionDescendente(vector<int>& arr) {
-    int n = arr.size(); // Obtener el tamaño del vector
-
-    for (int i = 0; i < n - 1; ++i) {
-        int indiceDelMaximo = i;
-        for (int j = i + 1; j < n; ++j) {
-            if (arr[j] > arr[indiceDelMaximo]) {
-                indiceDelMaximo = j;
+    for (int i = 0; i < tam - 1; i++) {
+        int menor = i;
+        for (int j = i + 1; j < tam; j++) {
+            if (arreglo[j] < arreglo[menor]) {
+                menor = j;
             }
         }
-
-
-        if (indiceDelMaximo != i) {
-            swap(arr[i], arr[indiceDelMaximo]);
-        }
+        int temp = arreglo[i];
+        arreglo[i] = arreglo[menor];
+        arreglo[menor] = temp;
     }
-}
 
-int main() {
-    // lista de números //
-    vector<int> numeros = {64, 25, 12, 22, 11, 88, 7, 33};
+    cout << "Arreglo ordenado: ";
+    for (int i = 0; i < tam; i++) {
+        cout << arreglo[i] << " ";
+    }
 
-    cout << "Lista original: ";
-    imprimirVector(numeros);
-
-
-    ordenarPorSeleccionDescendente(numeros);
-
-    cout << "Lista ordenada descendente: ";
-    imprimirVector(numeros);
-
-
+    cout << endl;
     return 0;
 }
